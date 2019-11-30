@@ -15,4 +15,3 @@ form.addEventListener('submit', e => {
             data: new FormData(form) // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
         });
     };});
-var pathname = window.location.pathname;
