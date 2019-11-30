@@ -7,7 +7,7 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <!-- Emi CSS -->
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 <head>
     <meta charset="UTF-8">
     <div class="navbar">
@@ -18,31 +18,47 @@
    </head>
 <body>
 <h3>Please fill out your information</h3>
-<div class="form">
-<form action="/action_page.php">
+<!--Form-validation codes from "https://getbootstrap.com/docs/4.3/components/forms/#validation"-->
+<div class="form" >
+<form id="contact" action="https://formsubmit.co/ele1@luc.edu" method="POST"/>
     <div class="container">
         <div class="col-sm">
             <div class="row"> First Name:<br></div>
-                <div class="row"> <input type="text" name="firstName" value="">
+            <div class="row"><label for="validation1"></label>
+                    <input type="text" class="form-control is-valid" id="validation1" placeholder="" name="first name" required>
+            <div class ="valid-feedback"></div>
                     <br></div>
-            <div class="row"> Last Name:<br>
-                    </div>
-            <div class="row"><input type="text" name="lastName" value="">
+
+            <div class="row"> Last Name:<br></div>
+            <div class="row"><label for="validation2"></label>
+                <input type="text" class="form-control is-valid" id="validation2" placeholder="" name="last name" required>
+                <div class ="valid-feedback"></div>
                 <br></div>
+
             <div class="row">Email Address:<br></div>
-            <div class="row"><input type="email" name="email" value="">
+            <div class="row"><label for="validation3"></label>
+                <input type="email" class="form-control is-valid" id="validation3" placeholder="" name="email" required>
+                <div class ="valid-feedback"></div>
                 <br></div>
+
             <div class="row">Phone Number:<br></div>
-            <div class="row"><input type="tel" name="phoneNumber" value="">
+            <div class="row"><label for="validation4"></label>
+                <input type="tel" class="form-control is-valid" id="validation4" placeholder="###-###-####" name="tel"
+                       pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                <div class ="valid-feedback"></div>
                 <br></div>
-            <div class="row">Enter your comment here:<br></div>
-            <div class="row"><textarea></textarea></div>
+
+            <div class="row"><br></div>
+            <div class="row"><label for = "validationTextarea">Comments</label>
+                <textarea type="text" class="form-control is-valid" id="validationTextarea" placeholder=""
+                          name= "textarea" required> </textarea>
+            <div class= "valid-feedback">
+            Please enter your comment in the textarea
+            </div>
             <br>
-            <div class="row"><input type="submit" value="Submit">
+            <button class="btn btn-primary" type="submit"> Submit form</button>
         </div><br>
         </div></div>
-    <div class="alert alert-danger" role="alert">alert danger</div>
-    <div class="alert alert-success" role="alert">alert success</div>
 
 </form>
 </div>
