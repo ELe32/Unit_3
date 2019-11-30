@@ -22,12 +22,22 @@
     <a href="Form.html">Contact</a>
 </div>
 
+
+
 <body>
 <div class="jumbotron jumbotron-fluid">
     <div class="container" >
         <h1 class="display-4">Travel Blog</h1>
         <p class="lead">Do it while you can, explore places &#128540.</p>
         <p><a class="btn btn-primary btn-lg" href="page2.html" role="button">Journey Begins Here</a></p>
+        <button onclick="deleteRecord()" id="delete">Delete view record</button>
+        <script>
+        function deleteRecord()
+        {
+        localStorage.clear();
+        document.getElementById("delete").innerHTML = "View record deleted";
+                }
+        </script>
     </div>
 </div>
 
@@ -73,6 +83,18 @@
 </div>
 
   <footer>
+           <div id="counter"></div>
+      <script>
+          var visits = localStorage.getItem('Web Page Visit Count');
+          if (visits === null) {
+              visits = 0;
+          }
+          visits++;
+          localStorage.setItem("Web Page Visit Count", visits);
+          document.getElementById("counter").innerHTML = "Number of page visit: " + visits;
+      </script>
+
+
    <p>Source: CNN Travel, Phu Quoc: best things to do in vietnam &#169<br>
    Source: Trip Advisor, Pink Pearl, Bun Cha Hanoi, Bup Restaurant &#169</p>
     <p>Emily L.</p>
